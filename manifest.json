@@ -1,0 +1,36 @@
+{ 
+  "manifest_version": 2,
+  "name": "Freebitcoin Auto-roll",
+  "version": "2.3",
+  "description": "Automatically clicks 'Roll' to claim your hourly satoshi + claims RP bonus if able + Multyplay BTC",
+
+  "applications": {
+    "gecko": {
+      "id": "omid.maroofi@gmail.com"
+    }
+  },
+
+  "icons": {
+    "64": "icons/bitcoin-logo.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/bitcoin-logo.png",
+    "default_title": "Freebitcoin Auto-roll - OmidMaroofi",
+    "default_popup": "popup/popup.html",
+    "browser_style": true
+  },
+
+  "background": {
+    "scripts": ["backgroundscript.js"]
+  },
+  
+  "content_scripts": [ 
+    { 
+      "matches": ["*://freebitco.in/*"],
+      "js": ["contentscript.js"]
+    } 
+  ],
+
+  "permissions": ["tabs"]
+}
